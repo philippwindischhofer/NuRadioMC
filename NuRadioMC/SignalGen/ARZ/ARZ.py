@@ -318,7 +318,7 @@ def theta_to_thetaprime(theta, xmax, R):
 @six.add_metaclass(Singleton)
 class ARZ(object):
 
-    def __init__(self, seed=1234, interp_factor=1, interp_factor2=100, library=None,
+    def __init__(self, seed=1234, interp_factor=10, interp_factor2=100, library=None,
                  arz_version='ARZ2020', use_numba=True):
         logger.warning("setting seed to {}".format(seed, interp_factor))
         self._random_generator = np.random.RandomState(seed)
@@ -493,7 +493,7 @@ class ARZ(object):
 
 
     def get_time_trace(self, shower_energy, theta, N, dt, shower_type, n_index, R, shift_for_xmax=False,
-                       same_shower=False, iN=None, output_mode='trace', maximum_angle=20 * units.deg,
+                       same_shower=False, iN=None, output_mode='trace', maximum_angle=40 * units.deg,
                        profile_depth=None, profile_ce=None):
         """
         calculates the electric-field Askaryan pulse from a charge-excess profile
