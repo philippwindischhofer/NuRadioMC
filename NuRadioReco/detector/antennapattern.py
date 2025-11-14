@@ -1242,14 +1242,14 @@ class AntennaPattern(AntennaPatternBase):
             logger.error("antenna response for {} not found".format(antenna_model))
             raise FileNotFoundError("antenna response for {} not found".format(antenna_model))
 
-        print("HHHHHHHHHH")
-        print("FREQUENCY SHIFT APPLIED")
-        scale_fact = 5.0 # scale down in frequency
-        scale_fact_heff = 1.4 # from increase in antenna gain: 3dBi -> 6dBi
-        ff /= scale_fact
-        H_phi *= (scale_fact * scale_fact_heff)
-        H_theta *= (scale_fact * scale_fact_heff)
-        print("HHHHHHHHHH")
+        #print("HHHHHHHHHH")
+        #print("FREQUENCY SHIFT APPLIED")
+        #scale_fact = 5.0 # scale down in frequency
+        #scale_fact_heff = 1.4 # from increase in antenna gain: 3dBi -> 6dBi
+        #ff /= scale_fact
+        #H_phi *= (scale_fact * scale_fact_heff)
+        #H_theta *= (scale_fact * scale_fact_heff)
+        #print("HHHHHHHHHH")
         
         self.frequencies = np.unique(ff)
         self.frequency_lower_bound = self.frequencies[0]
